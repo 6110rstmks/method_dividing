@@ -1,0 +1,69 @@
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("実行する番号を入力してください＞");
+            int num = int.Parse(Console.ReadLine());
+
+            switch (num)
+            {
+                case 1:
+                    Exec(1, less10, plus1);
+                    break;
+
+                default:
+                    Console.WriteLine("enter other numbers");
+                    break;
+            }
+            Console.ReadLine();
+        }
+
+        static int plus1(int x)
+        {
+            x ++;
+            return x;
+        }
+
+        static int plus2(int x)
+        {
+            x += 2;
+            return x;
+        }
+
+        static int minus1(int x)
+        {
+            x--;
+            return x;
+        }
+
+        static bool less10(int x)
+        {
+            return x < 10;
+     
+        }
+
+        static bool less30(int x)
+        {
+            return x < 30;
+        }
+
+        static bool great1(int x)
+        {
+            return x > 1;
+        }
+
+
+        static void Exec(int num, Func<int, bool> check, Func<int, int> next)
+        {
+            int i = num;
+            while (check(i))
+            {
+                Console.WriteLine(i.ToString());
+                i = next(i);
+            }
+        }
+    }
+}
+
+// next, put together less10,less30 plus1, plus3

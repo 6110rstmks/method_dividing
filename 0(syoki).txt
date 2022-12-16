@@ -1,0 +1,18 @@
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Exec1(2);
+            Console.ReadLine();
+        }
+
+        static void Exec1(int num)
+        {
+            int i = num;
+            while (i < 10)
+            {
+                Console.WriteLine(i.ToString());
+                i++;
+            }
+        }
+    }

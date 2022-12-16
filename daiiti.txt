@@ -1,0 +1,87 @@
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("実行する番号を入力してください＞");
+            int num = int.Parse(Console.ReadLine());
+
+            switch (num)
+            {
+                case 1:
+                    Exec1(2);
+                    break;
+
+                default:
+                    Console.WriteLine("enter other numbers");
+                    break;
+            }
+            Console.ReadLine();
+        }
+
+        static int plus1(int x)
+        {
+            x ++;
+            return x;
+        }
+
+        static int plus2(int x)
+        {
+            x += 2;
+            return x;
+        }
+
+        static int minus1(int x)
+        {
+            x--;
+            return x;
+        }
+
+        static bool less10(int x)
+        {
+            return x < 10;
+     
+        }
+
+        static bool less30(int x)
+        {
+            return x < 30;
+        }
+
+        static bool great1(int x)
+        {
+            return x > 1;
+        }
+
+
+        static void Exec1(int num)
+        {
+            int i = num;
+            while (less10(i))
+            {
+                Console.WriteLine(i.ToString());
+                i = plus1(i);
+            }
+        }
+
+        static void Exec2(int num)
+        {
+            int i = num;
+            while (less30(i))
+            {
+                Console.WriteLine(i.ToString());
+                i = plus2(i);
+            }
+        }
+        static void Exec3(int num)
+        {
+            int i = num;
+            while (great1(1))
+            {
+                Console.WriteLine(i.ToString());
+                i = minus1(i);
+            }
+        }
+    }
+}
+next, put together Exec1,Exec2,Exec3

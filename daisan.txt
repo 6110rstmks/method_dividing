@@ -1,0 +1,56 @@
+    class Program
+    {
+        static void Exec(int init, Func<int, int, bool> check , int target, Func<int, int, int> next, int calc)
+        {
+            int i = init;
+            // why store in i first -> you realize it by replacing all i with init
+            // kopipegadekiru = method kadekiru
+        
+            while (check(i, target))
+            {
+                Console.WriteLine($"{i}");
+                i = next(i, calc);
+            }
+        }
+
+        static bool less(int x, int y)
+        {
+            return x <= y;
+        }
+
+        static bool great(int x, int y)
+        {
+            return x >= y;
+        }
+
+        static int plus(int x, int y)
+        {
+            return x + y;
+        }
+
+        static void Main2(string[] args)
+        {
+            Console.Write("実行する番号を入力してください＞");
+            int num = int.Parse(Console.ReadLine());
+
+            switch (num)
+            {
+                case 1:
+                    Exec(1, less, 10, plus, 1);
+                    break;
+
+                case 2:
+                    Exec(1, less, 10, plus, 2);
+                    break;
+                case 3: 
+                    Exec(10, great, 1, plus, -1);
+                    break;
+
+                case 4:
+                    Exec(3, less, 30, plus, 3);
+                    break;
+            }
+            Console.ReadLine();
+        }
+    }
+}
